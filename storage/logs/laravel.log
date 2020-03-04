@@ -676,3 +676,121 @@ Did you mean one of these?
 #60 /var/www/html/salepropos/index.php(17): require_once('/var/www/html/s...')
 #61 {main}
 "} 
+[2020-03-05 04:41:48] local.ERROR: file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied {"exception":"[object] (ErrorException(code: 0): file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied at /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:122)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(122): file_put_contents()
+#2 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(83): Illuminate\\Filesystem\\Filesystem->put()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Store.php(129): Illuminate\\Session\\FileSessionHandler->write()
+#4 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(87): Illuminate\\Session\\Store->save()
+#5 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(218): Illuminate\\Session\\Middleware\\StartSession->terminate()
+#6 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(189): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /var/www/html/salepropos2/public/index.php(60): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /var/www/html/salepropos2/index.php(17): require_once('/var/www/html/s...')
+#9 {main}
+"} 
+[2020-03-05 04:42:14] local.ERROR: file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied {"exception":"[object] (ErrorException(code: 0): file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied at /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:122)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(122): file_put_contents()
+#2 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(83): Illuminate\\Filesystem\\Filesystem->put()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Store.php(129): Illuminate\\Session\\FileSessionHandler->write()
+#4 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(87): Illuminate\\Session\\Store->save()
+#5 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(218): Illuminate\\Session\\Middleware\\StartSession->terminate()
+#6 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(189): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /var/www/html/salepropos2/public/index.php(60): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 {main}
+"} 
+[2020-03-05 04:42:15] local.ERROR: file_put_contents(/var/www/html/salepropos2/storage/framework/views/27430b57fa1022cbfa55551af4804ab3a11fc341.php): failed to open stream: Permission denied {"exception":"[object] (ErrorException(code: 0): file_put_contents(/var/www/html/salepropos2/storage/framework/views/27430b57fa1022cbfa55551af4804ab3a11fc341.php): failed to open stream: Permission denied at /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:122)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(122): file_put_contents()
+#2 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(122): Illuminate\\Filesystem\\Filesystem->put()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(51): Illuminate\\View\\Compilers\\BladeCompiler->compile()
+#4 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get()
+#5 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/View.php(125): Illuminate\\View\\View->getContents()
+#6 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/View.php(90): Illuminate\\View\\View->renderContents()
+#7 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Http/Response.php(42): Illuminate\\View\\View->render()
+#8 /var/www/html/salepropos2/vendor/symfony/http-foundation/Response.php(202): Illuminate\\Http\\Response->setContent()
+#9 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(733): Symfony\\Component\\HttpFoundation\\Response->__construct()
+#10 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(705): Illuminate\\Routing\\Router::toResponse()
+#11 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(665): Illuminate\\Routing\\Router->prepareResponse()
+#12 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#13 /var/www/html/salepropos2/app/Http/Middleware/RedirectIfAuthenticated.php(24): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#14 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): App\\Http\\Middleware\\RedirectIfAuthenticated->handle()
+#15 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#17 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#18 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(68): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#20 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#23 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#24 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#26 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Session\\Middleware\\StartSession->handle()
+#27 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#29 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#30 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#32 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#33 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#35 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(667): Illuminate\\Pipeline\\Pipeline->then()
+#36 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(642): Illuminate\\Routing\\Router->runRouteWithinStack()
+#37 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(608): Illuminate\\Routing\\Router->runRoute()
+#38 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Router.php(597): Illuminate\\Routing\\Router->dispatchToRoute()
+#39 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch()
+#40 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#41 /var/www/html/salepropos2/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#42 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle()
+#43 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#45 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#46 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#48 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#49 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#50 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#51 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#52 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#54 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#55 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#56 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()
+#57 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then()
+#58 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#59 /var/www/html/salepropos2/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#60 {main}
+"} 
+[2020-03-05 04:42:15] local.ERROR: file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied {"exception":"[object] (ErrorException(code: 0): file_put_contents(/var/www/html/salepropos2/storage/framework/sessions/zC5HMbaofPwqRBAw5PsJ34ipYLMP1EuO68vuXAN5): failed to open stream: Permission denied at /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:122)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(122): file_put_contents()
+#2 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php(83): Illuminate\\Filesystem\\Filesystem->put()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Store.php(129): Illuminate\\Session\\FileSessionHandler->write()
+#4 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(87): Illuminate\\Session\\Store->save()
+#5 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(218): Illuminate\\Session\\Middleware\\StartSession->terminate()
+#6 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(189): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /var/www/html/salepropos2/public/index.php(60): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 {main}
+"} 
+[2020-03-05 04:50:29] local.ERROR: Command "view" is not defined.
+
+Did you mean one of these?
+    view:cache
+    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"view\" is not defined.
+
+Did you mean one of these?
+    view:cache
+    view:clear at /var/www/html/salepropos2/vendor/symfony/console/Application.php:632)
+[stacktrace]
+#0 /var/www/html/salepropos2/vendor/symfony/console/Application.php(226): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/salepropos2/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run()
+#4 /var/www/html/salepropos2/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
