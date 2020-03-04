@@ -96,7 +96,7 @@
           <!-- Sidebar Navigation Menus-->
           <div class="main-menu">
             <ul id="side-main-menu" class="side-menu list-unstyled">                  
-              <li><a href="<?php echo e(url('/')); ?>"> <i class="icon ion-ios-speedometer-outline"></i><span><?php echo e(__('file.dashboard')); ?></span></a></li>
+              <li><a href="<?php echo e(url('/')); ?>"> <i class="icon ion-ios-speedometer-outline"></i><span>  <?php echo e(__('file.dashboard')); ?></span></a></li>
               <?php
                 $role = DB::table('roles')->find(Auth::user()->role_id);
                 $index_permission = DB::table('permissions')->where('name', 'products-index')->first();
@@ -272,6 +272,45 @@
                 </ul>
               </li>
               <?php endif; ?>
+
+                <?php if($index_permission_active): ?>
+              <li><a href="#work" aria-expanded="false" data-toggle="collapse"> <i class="ion-clipboard"></i><span><?php echo e(trans('file.Work')); ?></span><span></a>
+                <ul id="work" class="collapse list-unstyled ">
+                  <li id="work-list-menu"><a href="<?php echo e(route('work.index')); ?>"><?php echo e(trans('file.Work List')); ?></a></li>
+                  <?php 
+                    $add_permission = DB::table('permissions')->where('name', 'work-add')->first();
+                    $add_permission_active = DB::table('role_has_permissions')->where([
+                        ['permission_id', $add_permission->id],
+                        ['role_id', $role->id]
+                    ])->first();
+                  ?>
+                  <?php if($add_permission_active): ?>
+                  <li id="work-create-menu"><a href="<?php echo e(route('work.create')); ?>"><?php echo e(trans('file.Add Work')); ?></a></li>
+                  <?php endif; ?>
+                </ul>
+              </li>
+              <?php endif; ?>
+
+
+                <?php if($index_permission_active): ?>
+              <li><a href="#budget" aria-expanded="false" data-toggle="collapse"> <i class="ion-briefcase"></i><span><?php echo e(trans('file.Budget')); ?></span><span></a>
+                <ul id="budget" class="collapse list-unstyled ">
+                  <li id="budget-list-menu"><a href="<?php echo e(route('quotations.index')); ?>"><?php echo e(trans('file.Budget List')); ?></a></li>
+                  <?php 
+                    $add_permission = DB::table('permissions')->where('name', 'budget-add')->first();
+                    $add_permission_active = DB::table('role_has_permissions')->where([
+                        ['permission_id', $add_permission->id],
+                        ['role_id', $role->id]
+                    ])->first();
+                  ?>
+                  <?php if($add_permission_active): ?>
+                  <li id="budget-create-menu"><a href="<?php echo e(route('quotations.create')); ?>"><?php echo e(trans('file.Add Budget')); ?></a></li>
+                  <?php endif; ?>
+                </ul>
+              </li>
+              <?php endif; ?>
+
+
               <?php 
                 $index_permission = DB::table('permissions')->where('name', 'transfers-index')->first();
                 $index_permission_active = DB::table('role_has_permissions')->where([

@@ -1,5 +1,7 @@
 <?php 
 return [
+	"work" => "",
+	"budget" => "",
 	"dashboard" => "",
 	"language" => "",
 	"revenue" => "",

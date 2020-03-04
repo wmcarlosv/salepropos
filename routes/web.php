@@ -131,6 +131,29 @@ Route::group(['middleware' => ['auth', 'active']], function() {
 	Route::post('quotations/deletebyselection', 'QuotationController@deleteBySelection');
 	Route::resource('quotations', 'QuotationController');
 
+	// work 
+
+	Route::get('work/product_quotation/{id}','WorkController@productQuotationData');
+	Route::get('work/lims_product_search', 'WorkController@limsProductSearch')->name('product_work.search');
+	Route::get('work/getcustomergroup/{id}', 'WorkController@getCustomerGroup')->name('work.getcustomergroup');
+	Route::get('work/getproduct/{id}', 'WorkController@getProduct')->name('work.getproduct');
+	Route::get('work/{id}/create_sale', 'WorkController@createSale')->name('work.create_sale');
+	Route::get('work/{id}/create_purchase', 'WorkController@createPurchase')->name('work.create_purchase');
+	Route::post('work/sendmail', 'WorkController@sendMail')->name('work.sendmail');
+	Route::post('work/deletebyselection', 'WorkController@deleteBySelection');
+	
+
+
+
+
+	Route::resource('work', 'WorkController');
+
+	//---------------
+
+
+
+
+
 	Route::post('purchases/purchase-data', 'PurchaseController@purchaseData');
 	Route::get('purchases/product_purchase/{id}','PurchaseController@productPurchaseData');
 	Route::get('purchases/lims_product_search', 'PurchaseController@limsProductSearch')->name('product_purchase.search');

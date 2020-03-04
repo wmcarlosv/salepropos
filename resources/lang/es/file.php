@@ -1,5 +1,17 @@
 <?php 
-return [
+return [ 
+	"work" => "Trabajo",
+	"budget" => "Presupuesto",
+
+	'budget' => 'Budget',
+	'Budget List' => 'Lista de Presupuestos',
+	'Add Budget' => 'Añadir Presupuesto',
+	'Budget' => 'Presupuesto',
+
+	'Add Work' => 'Añadir Obra',
+	'Work List' => 'Lista de Obras',
+	'Work' => 'Obra',
+	
 	"dashboard" => "Tablero",
 	"language" => "Idioma",
 	"revenue" => "Ingresos",

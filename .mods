@@ -1,0 +1,17 @@
+Hola como estas, perdona por el retraso, pero como este trabajo es para un cliente mio , he hablado con el para ver algun que otro cambio que hay que realizar :
+
+Lo que necesitamos modificar son:
+
+
+En el menu hay una opcion para realizar ventas, y cotizaciones.
+
+Necesito añadir:
+Una nueva opcion que se llamaría "obra" que seria igual que "cotizaciones" y si tiene que descontar el stock de los producto.
+
+Tambien añadir una nueva opcion que se llamaría "Presupuesto" que seria igual que "cotizaciones" y no tiene que descontar 
+el stock de los producto.
+
+Los numeros de referencia de las ventas y cotizaciones ahora mismo se genera automaticamente poniendo como numeración del documento la fecha....necesito que los numeros de referencia sean numeros consecutivos, es decir si creo un documento tendría que ser por ejemplo el 455 y al realizar otra venta la referencia seria 456..
+
+Los numeros de referencias de los documentos:
+ventas,cotizaciones,presupuestos y obras tienen que ser distintos....no se si entiendes esta parte.
