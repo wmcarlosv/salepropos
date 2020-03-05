@@ -12,8 +12,9 @@ class CreateTableWorks extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('works', function (Blueprint $table) {
+    {       
+
+          Schema::create('budgets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('reference_no');
             $table->integer('biller_id');
@@ -33,8 +34,7 @@ class CreateTableWorks extends Migration
             $table->integer('quotation_status');
             $table->string('document')->nullable();
             $table->text('note')->nullable();
-            $table->timestamps();
-        });
+            $table->timestamps(); });
     }
 
     /**

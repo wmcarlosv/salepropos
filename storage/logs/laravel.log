@@ -868,3 +868,17 @@ Did you mean one of these?
 #9 /var/www/html/salepropos2/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #10 {main}
 "} 
+[2020-03-05 08:35:39] local.ERROR: Too many arguments, expected arguments "command". {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Too many arguments, expected arguments \"command\". at /var/www/html/salepropos2/vendor/symfony/console/Input/ArgvInput.php:182)
+[stacktrace]
+#0 /var/www/html/salepropos2/vendor/symfony/console/Input/ArgvInput.php(86): Symfony\\Component\\Console\\Input\\ArgvInput->parseArgument()
+#1 /var/www/html/salepropos2/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#2 /var/www/html/salepropos2/vendor/symfony/console/Command/Command.php(210): Symfony\\Component\\Console\\Input\\Input->bind()
+#3 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Console/Command.php(171): Symfony\\Component\\Console\\Command\\Command->run()
+#4 /var/www/html/salepropos2/vendor/symfony/console/Application.php(886): Illuminate\\Console\\Command->run()
+#5 /var/www/html/salepropos2/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand()
+#6 /var/www/html/salepropos2/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun()
+#7 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run()
+#8 /var/www/html/salepropos2/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run()
+#9 /var/www/html/salepropos2/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#10 {main}
+"} 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableBudget extends Migration
+class CreateTableBudgets extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateTableBudget extends Migration
      */
     public function up()
     {
-          Schema::create('budgets', function (Blueprint $table) {
+        
+             Schema::create('budgets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('reference_no');
             $table->integer('biller_id');
@@ -33,6 +34,8 @@ class CreateTableBudget extends Migration
             $table->integer('quotation_status');
             $table->string('document')->nullable();
             $table->text('note')->nullable();
+             $table->integer('user_id')->after('reference_no');
+            $table->integer('variant_id')->after('product_id')->nullable();
             $table->timestamps();
         });
     }
