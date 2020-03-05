@@ -97,8 +97,10 @@ class WorkController extends Controller
         if( !isset($works) )
             $id_works = (int)$works->last()->id;
 
-        $id_works = 900000 + $id_works;
         $id_works++;
+        $data['reference_no'] = $id_works;
+        $id_works = 900000 + $id_works;
+        
 
         $data['id'] = $id_works; 
 
