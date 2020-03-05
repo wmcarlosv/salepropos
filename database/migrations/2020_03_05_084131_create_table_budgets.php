@@ -34,8 +34,8 @@ class CreateTableBudgets extends Migration
             $table->integer('quotation_status');
             $table->string('document')->nullable();
             $table->text('note')->nullable();
-             $table->integer('user_id')->after('reference_no');
-            $table->integer('variant_id')->after('product_id')->nullable();
+             $table->integer('user_id');
+            $table->integer('variant_id')->nullable();
             $table->timestamps();
         });
     }

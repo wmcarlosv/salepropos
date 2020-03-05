@@ -14,9 +14,10 @@ class CreateTableWorks extends Migration
     public function up()
     {       
 
-          Schema::create('budgets', function (Blueprint $table) {
+          Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
             $table->string('reference_no');
+            $table->integer('user_id');
             $table->integer('biller_id');
             $table->integer('supplier_id')->nullable();
             $table->integer('customer_id');
@@ -34,6 +35,8 @@ class CreateTableWorks extends Migration
             $table->integer('quotation_status');
             $table->string('document')->nullable();
             $table->text('note')->nullable();
+
+            $table->integer('variant_id')->nullable();
             $table->timestamps(); });
     }
 
