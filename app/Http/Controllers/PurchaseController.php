@@ -315,6 +315,11 @@ class PurchaseController extends Controller
             $data['document'] = $documentName;
         }
         //return dd($data);
+
+        $purcharse = Purchase::all();
+        $id_reference = (int) $purcharse->last()->id;
+
+        $data['reference_no'] = (++$id_reference);
         Purchase::create($data);
 
         $lims_purchase_data = Purchase::latest()->first();

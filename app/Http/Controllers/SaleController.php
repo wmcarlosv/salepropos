@@ -257,7 +257,11 @@ class SaleController extends Controller
         //return dd($data);
         $data['user_id'] = Auth::id();
         if($data['pos']){
-            $data['reference_no'] = 'posr-' . date("Ymd") . '-'. date("his");
+
+            $sale = Sale::all(); 
+            $id = (int) $sale->last()->id;
+
+            $data['reference_no'] = 'posr-' . (++$id);
             $balance = $data['grand_total'] - $data['paid_amount'];
             if($balance > 0 || $balance < 0)
                 $data['payment_status'] = 2;
@@ -273,8 +277,15 @@ class SaleController extends Controller
                 $lims_sale_data->delete();
             }
         }
-        else
-            $data['reference_no'] = 'sr-' . date("Ymd") . '-'. date("his");
+        else{
+
+            $sale = Sale::all(); 
+            $id = (int) $sales->last()->id;
+
+            $data['reference_no'] = 'sr-' . (++$id);
+        
+
+        }
 
         $document = $request->document;
         if ($document) {
