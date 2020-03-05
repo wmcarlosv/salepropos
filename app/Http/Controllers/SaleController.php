@@ -278,9 +278,10 @@ class SaleController extends Controller
             }
         }
         else{
-
+        	$id = 0; 
             $sale = Sale::all(); 
-            $id = (int) $sales->last()->id;
+
+            $id = (int) $sale->last()->id;
 
             $data['reference_no'] = 'sr-' . (++$id);
         
