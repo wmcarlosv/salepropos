@@ -295,7 +295,7 @@
                 @if($index_permission_active)
               <li><a href="#budget" aria-expanded="false" data-toggle="collapse"> <i class="ion-briefcase"></i><span>{{trans('file.Budget')}}</span><span></a>
                 <ul id="budget" class="collapse list-unstyled ">
-                  <li id="budget-list-menu"><a href="{{route('quotations.index')}}">{{trans('file.Budget List')}}</a></li>
+                  <li id="budget-list-menu"><a href="{{route('budget.index')}}">{{trans('file.Budget List')}}</a></li>
                   <?php 
                     $add_permission = DB::table('permissions')->where('name', 'budget-add')->first();
                     $add_permission_active = DB::table('role_has_permissions')->where([
@@ -304,7 +304,7 @@
                     ])->first();
                   ?>
                   @if($add_permission_active)
-                  <li id="budget-create-menu"><a href="{{route('quotations.create')}}">{{trans('file.Add Budget')}}</a></li>
+                  <li id="budget-create-menu"><a href="{{route('budget.create')}}">{{trans('file.Add Budget')}}</a></li>
                   @endif
                 </ul>
               </li>

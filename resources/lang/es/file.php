@@ -11,6 +11,7 @@ return [
 	'Add Work' => 'Añadir Obra',
 	'Work List' => 'Lista de Obras',
 	'Work' => 'Obra',
+	'Work Details' => 'Detalles de la Obra',
 	
 	"dashboard" => "Tablero",
 	"language" => "Idioma",

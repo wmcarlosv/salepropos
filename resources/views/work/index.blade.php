@@ -9,7 +9,7 @@
 <section>
     <div class="container-fluid">
         @if(in_array("quotes-add", $all_permission))
-            <a href="{{route('quotations.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> {{trans('file.Add Quotation')}}</a>
+            <a href="{{route('work.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> {{trans('file.Add Work')}}</a>
         @endif
     </div>
     <div class="table-responsive">
@@ -64,18 +64,18 @@
                                 </li>
                                 @if(in_array("quotes-edit", $all_permission))
                                 <li>
-                                    <a class="btn btn-link" href="{{ route('quotations.edit', ['id' => $quotation->id]) }}"><i class="fa fa-edit"></i> {{trans('file.edit')}}</a></button> 
+                                    <a class="btn btn-link" href="{{ route('work.edit', ['id' => $quotation->id]) }}"><i class="fa fa-edit"></i> {{trans('file.edit')}}</a></button> 
                                 </li>
                                 @endif
                                 <li>
-                                    <a class="btn btn-link" href="{{ route('quotation.create_sale', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-cart"></i> {{trans('file.Create Sale')}}</a></button> 
+                                    <a class="btn btn-link" href="{{ route('work.create_sale', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-cart"></i> {{trans('file.Create Sale')}}</a></button> 
                                 </li>
                                 <li>
-                                    <a class="btn btn-link" href="{{ route('quotation.create_purchase', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-basket"></i> {{trans('file.Create Purchase')}}</a></button> 
+                                    <a class="btn btn-link" href="{{ route('work.create_purchase', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-basket"></i> {{trans('file.Create Purchase')}}</a></button> 
                                 </li>
                                 <li class="divider"></li>
                                 @if(in_array("quotes-delete", $all_permission))
-                                {{ Form::open(['route' => ['quotations.destroy', $quotation->id], 'method' => 'DELETE'] ) }}
+                                {{ Form::open(['route' => ['work.destroy', $quotation->id], 'method' => 'DELETE'] ) }}
                                 <li>
                                     <button type="submit" class="btn btn-link" onclick="return confirmDelete()"><i class="fa fa-trash"></i> {{trans('file.delete')}}</button>
                                 </li>
@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <button id="print-btn" type="button" class="btn btn-default btn-sm d-print-none"><i class="fa fa-print"></i> {{trans('file.Print')}}</button>
-                    {{ Form::open(['route' => 'quotation.sendmail', 'method' => 'post', 'class' => 'sendmail-form'] ) }}
+                    {{ Form::open(['route' => 'work.sendmail', 'method' => 'post', 'class' => 'sendmail-form'] ) }}
                         <input type="hidden" name="quotation_id">
                         <button class="btn btn-default btn-sm d-print-none"><i class="fa fa-envelope"></i> {{trans('file.Email')}}</button>
                     {{ Form::close() }}
@@ -121,7 +121,7 @@
                     <button type="button" id="close-btn" data-dismiss="modal" aria-label="Close" class="close d-print-none"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="col-md-12 text-center">
-                    <i style="font-size: 15px;">{{trans('file.Quotation Details')}}</i>
+                    <i style="font-size: 15px;">{{trans('file.Work Details')}}</i>
                 </div>
             </div>
         </div>
@@ -148,9 +148,9 @@
 
 <script type="text/javascript">
 
-    $("ul#quotation").siblings('a').attr('aria-expanded','true');
-    $("ul#quotation").addClass("show");
-    $("ul#quotation #quotation-list-menu").addClass("active");
+    $("ul#work").siblings('a').attr('aria-expanded','true');
+    $("ul#work").addClass("show");
+    $("ul#work #work-list-menu").addClass("active");
     var all_permission = <?php echo json_encode($all_permission) ?>;
     var quotation_id = [];
     var user_verified = <?php echo json_encode(env('USER_VERIFIED')) ?>;
@@ -271,7 +271,7 @@
                         if(quotation_id.length && confirm("Are you sure want to delete?")) {
                             $.ajax({
                                 type:'POST',
-                                url:'quotations/deletebyselection',
+                                url:'work/deletebyselection',
                                 data:{
                                     quotationIdArray: quotation_id
                                 },
@@ -317,7 +317,7 @@
     function quotationDetails(quotation){
         $('input[name="quotation_id"]').val(quotation[13]);
         var htmltext = '<strong>{{trans("file.Date")}}: </strong>'+quotation[0]+'<br><strong>{{trans("file.reference")}}: </strong>'+quotation[1]+'<br><strong>{{trans("file.Status")}}: </strong>'+quotation[2]+'<br><br><div class="row"><div class="col-md-6"><strong>{{trans("file.From")}}:</strong><br>'+quotation[3]+'<br>'+quotation[4]+'<br>'+quotation[5]+'<br>'+quotation[6]+'<br>'+quotation[7]+'<br>'+quotation[8]+'</div><div class="col-md-6"><div class="float-right"><strong>{{trans("file.To")}}:</strong><br>'+quotation[9]+'<br>'+quotation[10]+'<br>'+quotation[11]+'<br>'+quotation[12]+'</div></div></div>';
-        $.get('quotations/product_quotation/' + quotation[13], function(data){
+        $.get('work/product_quotation/' + quotation[13], function(data){
             $(".product-quotation-list tbody").remove();
             var name_code = data[0];
             var qty = data[1];

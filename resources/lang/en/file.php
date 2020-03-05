@@ -1,14 +1,16 @@
 <?php 
 return [
 	'budget' => 'Budget',
-	'List Budget' => 'List Budget',
+	'Budget List' => 'List Budget',
 	'Add Budget' => 'Add Budget',
+	'Add budget' => 'Add Budget',
 	'Budget' => 'Budget',
 
 	'Add Work' => 'Add Work',
 	'Work List' => 'Work List',
 	'work' => 'Work',
 	'Work' => 'Work',
+	'Work Details' => 'Work Details',
 	'dashboard' => 'Dashboard',
 	'language' => 'Language',
 	'revenue' => 'Revenue',

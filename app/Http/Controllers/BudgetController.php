@@ -11,7 +11,7 @@ use App\Biller;
 use App\Product;
 use App\Unit;
 use App\Tax;
-use App\Work as Quotation;
+use App\Budget as Quotation;
 use App\Delivery;
 use App\PosSetting;
 use App\ProductQuotation;
@@ -27,7 +27,7 @@ use App\Mail\UserNotification;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
-class WorkController extends Controller
+class BudgetController extends Controller
 {
     public function index()
     {
@@ -35,7 +35,7 @@ class WorkController extends Controller
        
         
         $role = Role::find(Auth::user()->role_id);
-        if($role->hasPermissionTo('work-index')){
+        if($role->hasPermissionTo('budget-index')){
             $permissions = Role::findByName($role->name)->permissions;
             foreach ($permissions as $permission)
                 $all_permission[] = $permission->name;
@@ -46,7 +46,7 @@ class WorkController extends Controller
                 $lims_quotation_all = Quotation::with('biller', 'customer', 'supplier', 'user')->orderBy('id', 'desc')->where('user_id', Auth::id())->get();
             else
                 $lims_quotation_all = Quotation::with('biller', 'customer', 'supplier', 'user')->orderBy('id', 'desc')->get();
-            return view('work.index', compact('lims_quotation_all', 'all_permission'));
+            return view('budget.index', compact('lims_quotation_all', 'all_permission'));
         }
         else
             return redirect()->back()->with('not_permitted', 'Sorry! You are not allowed to access this module');
@@ -55,14 +55,14 @@ class WorkController extends Controller
     public function create()
     {
         $role = Role::find(Auth::user()->role_id);
-        if($role->hasPermissionTo('work-add')){
+        if($role->hasPermissionTo('budget-add')){
             $lims_biller_list = Biller::where('is_active', true)->get();
             $lims_warehouse_list = Warehouse::where('is_active', true)->get();
             $lims_customer_list = Customer::where('is_active', true)->get();
             $lims_supplier_list = Supplier::where('is_active', true)->get();
             $lims_tax_list = Tax::where('is_active', true)->get();
 
-            return view('work.create', compact('lims_biller_list', 'lims_warehouse_list', 'lims_customer_list', 'lims_supplier_list', 'lims_tax_list'));
+            return view('budget.create', compact('lims_biller_list', 'lims_warehouse_list', 'lims_customer_list', 'lims_supplier_list', 'lims_tax_list'));
         }
         else
             return redirect()->back()->with('not_permitted', 'Sorry! You are not allowed to access this module');
@@ -97,7 +97,7 @@ class WorkController extends Controller
         if( !isset($works) )
             $id_works = (int)$works->last()->id;
 
-        $id_works = 900000 + $id_works;
+        $id_works = 1200000 + $id_works;
         $id_works++;
 
         $data['id'] = $id_works; 
@@ -174,7 +174,7 @@ class WorkController extends Controller
                 $message = 'Quotation created successfully. Please setup your <a href="setting/mail_setting">mail setting</a> to send mail.';
             } 
         }
-        return redirect('work')->with('message', $message);
+        return redirect('budget')->with('message', $message);
     }
 
     public function sendMail(Request $request)
@@ -385,7 +385,7 @@ class WorkController extends Controller
     public function edit($id)
     {
         $role = Role::find(Auth::user()->role_id);
-        if($role->hasPermissionTo('work-edit')){
+        if($role->hasPermissionTo('budget-edit')){
             $lims_customer_list = Customer::where('is_active', true)->get();
             $lims_warehouse_list = Warehouse::where('is_active', true)->get();
             $lims_biller_list = Biller::where('is_active', true)->get();
@@ -393,7 +393,7 @@ class WorkController extends Controller
             $lims_tax_list = Tax::where('is_active', true)->get();
             $lims_quotation_data = Quotation::find($id);
             $lims_product_quotation_data = ProductQuotation::where('quotation_id', $id)->get();
-            return view('work.edit',compact('lims_customer_list', 'lims_warehouse_list', 'lims_biller_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data', 'lims_supplier_list'));
+            return view('budget.edit',compact('lims_customer_list', 'lims_warehouse_list', 'lims_biller_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data', 'lims_supplier_list'));
         }
         else
             return redirect()->back()->with('not_permitted', 'Sorry! You are not allowed to access this module');
@@ -417,7 +417,7 @@ class WorkController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/work/documents', $documentName);
+            $document->move('public/budget/documents', $documentName);
             $data['document'] = $documentName;
         }
         $lims_quotation_data = Quotation::find($id);
@@ -529,7 +529,7 @@ class WorkController extends Controller
                 $message = 'Quotation updated successfully. Please setup your <a href="setting/mail_setting">mail setting</a> to send mail.';
             } 
         }
-        return redirect('work')->with('message', $message);
+        return redirect('budget')->with('message', $message);
     }
 
     public function createSale($id)
@@ -541,7 +541,7 @@ class WorkController extends Controller
         $lims_quotation_data = Quotation::find($id);
         $lims_product_quotation_data = ProductQuotation::where('quotation_id', $id)->get();
         $lims_pos_setting_data = PosSetting::latest()->first();
-        return view('work.create_sale',compact('lims_customer_list', 'lims_warehouse_list', 'lims_biller_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data', 'lims_pos_setting_data'));
+        return view('budget.create_sale',compact('lims_customer_list', 'lims_warehouse_list', 'lims_biller_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data', 'lims_pos_setting_data'));
     }
 
     public function createPurchase($id)
@@ -554,7 +554,7 @@ class WorkController extends Controller
         $lims_product_list_without_variant = $this->productWithoutVariant();
         $lims_product_list_with_variant = $this->productWithVariant();
 
-        return view('work.create_purchase',compact('lims_product_list_without_variant', 'lims_product_list_with_variant', 'lims_supplier_list', 'lims_warehouse_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data'));
+        return view('budget.create_purchase',compact('lims_product_list_without_variant', 'lims_product_list_with_variant', 'lims_supplier_list', 'lims_warehouse_list', 'lims_tax_list', 'lims_quotation_data','lims_product_quotation_data'));
     }
 
     public function productWithoutVariant()
@@ -583,7 +583,7 @@ class WorkController extends Controller
             }
             $lims_quotation_data->delete();
         }
-        return 'Work deleted successfully!';
+        return 'budget deleted successfully!';
     }
 
     public function destroy($id)
@@ -594,6 +594,6 @@ class WorkController extends Controller
             $product_quotation_data->delete();
         }
         $lims_quotation_data->delete();
-        return redirect('work')->with('not_permitted', 'Quotation deleted successfully');
+        return redirect('budget')->with('not_permitted', 'Quotation deleted successfully');
     }
 }

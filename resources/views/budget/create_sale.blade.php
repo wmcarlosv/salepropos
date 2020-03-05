@@ -345,7 +345,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                          <div class="form-group">
                                             <label><strong>{{trans('file.Sale Note')}}</strong></label>
                                             <textarea rows="5" class="form-control" name="sale_note" >{{$lims_quotation_data->note}}</textarea>
                                         </div>

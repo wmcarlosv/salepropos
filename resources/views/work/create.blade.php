@@ -8,11 +8,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex align-items-center">
-                        <h4>{{trans('file.Add Quotation')}}</h4>
+                        <h4>{{trans('file.Add Work')}}</h4>
                     </div>
                     <div class="card-body">
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
-                        {!! Form::open(['route' => 'quotations.store', 'method' => 'post', 'files' => true, 'id' => 'quotation-form']) !!}
+                        {!! Form::open(['route' => 'work.store', 'method' => 'post', 'files' => true, 'id' => 'work-form']) !!}
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row">
@@ -273,9 +273,9 @@
 
 <script type="text/javascript">
 
-    $("ul#quotation").siblings('a').attr('aria-expanded','true');
-    $("ul#quotation").addClass("show");
-    $("ul#quotation #quotation-create-menu").addClass("active");
+    $("ul#work").siblings('a').attr('aria-expanded','true');
+    $("ul#work").addClass("show");
+    $("ul#work #work-create-menu").addClass("active");
 
 var lims_product_array = [];
 var product_code = [];
@@ -474,7 +474,7 @@ $(window).keydown(function(e){
     }
 });
 
-$('#quotation-form').on('submit',function(e){
+$('#work-form').on('submit',function(e){
     var rownumber = $('table.order-list tbody tr:last').index();
     if (rownumber < 0) {
         alert("Please insert product to order table!")

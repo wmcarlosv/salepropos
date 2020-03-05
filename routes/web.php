@@ -142,13 +142,28 @@ Route::group(['middleware' => ['auth', 'active']], function() {
 	Route::post('work/sendmail', 'WorkController@sendMail')->name('work.sendmail');
 	Route::post('work/deletebyselection', 'WorkController@deleteBySelection');
 	
-
-
-
-
 	Route::resource('work', 'WorkController');
 
 	//---------------
+
+
+	//budget
+
+	Route::get('budget/product_quotation/{id}','BudgetController@productQuotationData');
+	Route::get('budget/lims_product_search', 'BudgetController@limsProductSearch')->name('product_budget.search');
+	Route::get('budget/getcustomergroup/{id}', 'BudgetController@getCustomerGroup')->name('budget.getcustomergroup');
+	Route::get('budget/getproduct/{id}', 'BudgetController@getProduct')->name('budget.getproduct');
+	Route::get('budget/{id}/create_sale', 'BudgetController@createSale')->name('budget.create_sale');
+	Route::get('budget/{id}/create_purchase', 'BudgetController@createPurchase')->name('budget.create_purchase');
+	Route::post('budget/sendmail', 'BudgetController@sendMail')->name('budget.sendmail');
+	Route::post('budget/deletebyselection', 'BudgetController@deleteBySelection');
+	
+
+
+
+
+	Route::resource('budget', 'BudgetController');
+	//----------------------------
 
 
 
