@@ -94,7 +94,7 @@ class BudgetController extends Controller
         $works = Quotation::all();
         $id_works = 0;
 
-        if( !isset($works) )
+        if( isset($works) )
             $id_works = (int)$works->last()->id;
 
         $id_works++;

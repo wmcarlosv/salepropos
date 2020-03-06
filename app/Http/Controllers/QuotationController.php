@@ -87,6 +87,19 @@ class QuotationController extends Controller
             $data['document'] = $documentName;
         }
         $data['reference_no'] = 'qr-' . date("Ymd") . '-'. date("his");
+
+
+        $works = Quotation::all();
+        $id_works = 0;
+
+        if( isset($works) )
+            $id_works = (int)$works->last()->id;
+
+        $id_works++;
+        
+        $data['reference_no'] = $id_works; 
+
+        
         $lims_quotation_data = Quotation::create($data);
         if($lims_quotation_data->quotation_status == 2){
             //collecting mail data

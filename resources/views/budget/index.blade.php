@@ -67,12 +67,8 @@
                                     <a class="btn btn-link" href="{{ route('budget.edit', ['id' => $quotation->id]) }}"><i class="fa fa-edit"></i> {{trans('file.edit')}}</a></button> 
                                 </li>
                                 @endif
-                                <li>
-                                    <a class="btn btn-link" href="{{ route('budget.create_sale', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-cart"></i> {{trans('file.Create Sale')}}</a></button> 
-                                </li>
-                                <li>
-                                    <a class="btn btn-link" href="{{ route('budget.create_purchase', ['id' => $quotation->id]) }}"><i class="fa fa-shopping-basket"></i> {{trans('file.Create Purchase')}}</a></button> 
-                                </li>
+                               
+                            
                                 <li class="divider"></li>
                                 @if(in_array("quotes-delete", $all_permission))
                                 {{ Form::open(['route' => ['budget.destroy', $quotation->id], 'method' => 'DELETE'] ) }}
